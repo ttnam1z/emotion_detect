@@ -28,7 +28,7 @@ testdata = []
 traindata = []
 for ls in data: 
     num = len(ls)
-    rand = random.choices(range(num),k=num//10)
+    rand = random.sample(range(num),k=num//10) #fix get unique value
     rand2 = list(set(range(num)).difference(set(rand)))
     testdata.extend([ls[idx] for idx in rand])
     traindata.extend([ls[idx] for idx in rand2])
